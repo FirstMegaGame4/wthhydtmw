@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "wthhydtmw",
+	"version": "${version}",
+	"name": "What The Hell Have You Done To My World",
+	"description": "Perlin Noises Goes Brr",
+	"authors": [
+		"FirstMegaGame4"
+	],
+	"contributors": [
+		"Aethyus (Icon Artist)"
+	],
+	"contact": {
+		"homepage": "https://github.com/FirstMegaGame4/wthhydtmw",
+		"sources": "https://github.com/FirstMegaGame4/wthhydtmw",
+		"issues": "https://github.com/FirstMegaGame4/wthhydtmw/issues"
+	},
+	"license": "Code: LGPL-3.0\\\\nAssets: All Rights Reserved",
+	"icon": "assets/wthhydtmw/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"fr.firstmegagame4.wthhydtmw.WhatTheHellHaveYouDoneToMyWorld"
+		]
+	},
+	"mixins": [
+		"wthhydtmw.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
