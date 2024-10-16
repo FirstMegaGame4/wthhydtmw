@@ -1,5 +1,8 @@
+import com.mmodding.gradle.api.EnvironmentTarget
+
 plugins {
-	id 'fabric-loom' version '1.5-SNAPSHOT'
+	id 'com.mmodding.gradle' version '0.0.9'
+	id 'fabric-loom' version '1.8-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -16,6 +19,33 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+}
+
+mmodding {
+	configureFabricModJson {
+		name = "What The Hell Have You Done To My World"
+		namespace = "wthhydtmw"
+		license = "Code: LGPL-3.0\\nAssets: All Rights Reserved"
+		description = "Perlin Noise Goes Brr"
+		icon = "assets/wthhydtmw/icon.png"
+		addAuthor("FirstMegaGame4")
+		addContributor("Aethyus (Icon Artist)")
+		withContact {
+			it.homepage = "https://github.com/FirstMegaGame4/wthhydtmw"
+			it.sources = "https://github.com/FirstMegaGame4/wthhydtmw"
+			it.issues = "https://github.com/FirstMegaGame4/wthhydtmw/issues"
+		}
+		environment = EnvironmentTarget.ANY
+		withEntrypoints {
+			it.init("fr.firstmegagame4.wthhydtmw.WhatTheHellHaveYouDoneToMyWorld")
+		}
+		addMixin("wthhydtmw.mixins.json")
+		withDependencies {
+			it.javaVersion = ">=" + 21
+			it.minecraftVersion = "~" + project.minecraft_version
+			it.fabricLoaderVersion = ">=" + project.loader_version
+		}
+	}
 }
 
 dependencies {
